@@ -8,6 +8,6 @@ Shoutout to Bro Codez for teaching me how to make all these types of data struct
 
 Bro Codez youtube channel:
 
-(He makes videos on PHP, Java, C++, C#, CSS, HTMl, and Python so I would highly encourage you check him out):
+(He makes videos on PHP, Java, C++, C#, CSS, HTML, and Python so I would highly encourage you check him out):
 
 https://www.youtube.com/@BroCodez
