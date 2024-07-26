@@ -4,7 +4,7 @@ It is currently my third month of Java, and I am trying to learn data structures
 
 So, I decided to try to learn how to code data structures in java, which is easy since java is a very object oriented language (its the main reason why there is a lot of boilerplate code).
 
-Shoutout to Bro Codez for teaching me how to make a dynamic array WITHOUT importing the classes required:
+Shoutout to Bro Codez for teaching me how to make all these types of data structures:
 
 Bro Codez youtube channel:
 
