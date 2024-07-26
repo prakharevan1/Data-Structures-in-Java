@@ -1,7 +1,7 @@
 public class DynamicArray
 {
-    private int size; //when declared, its 0
-    private int capacity;
+    private int size; //not instantiated (yet)
+    private int capacity = 10;
     private Object[] array;
 
 
@@ -96,6 +96,10 @@ public class DynamicArray
     {
         return size == 0; //if size is 0, it is empty
     }
+
+    /*
+        by the way, you need to add the tostring method to print out the elements or else you will get a bunch of nullpointer errors
+    */
 
     public String toString() {
         String string = ""; //declaring the string
