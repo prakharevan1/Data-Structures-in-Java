@@ -12,5 +12,7 @@ public class Main
         dynamicArray.delete("C");
 
         System.out.println(dynamicArray);
+
+        //I didnt do the rest of the functions, but I have tested them and they will work :-)
     }
 }
