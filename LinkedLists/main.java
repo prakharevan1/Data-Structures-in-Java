@@ -32,8 +32,8 @@ public class Main
         linkedList.addFirst("0"); //adds as the first node
         linkedList.addLast("G"); //adds as last node
 
-        String first = linkedList.removeFirst(); //removes first node
-        String last = linkedList.removeLast(); //removes last node
+        linkedList.removeFirst(); //removes first node
+        linkedList.removeLast(); //removes last node
         /*
         LinkedList = stores nodes into two parts (data and address)
         Nodes are in non-consecutive memory locations
