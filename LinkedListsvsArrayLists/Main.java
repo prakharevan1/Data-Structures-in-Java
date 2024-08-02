@@ -6,14 +6,13 @@ public class Main {
   public static void main(String[] args) {
     LinkedList<Integer> linkedlist = new LinkedList<Integer>(); //declaring lists
     ArrayList<Integer> arraylist = new ArrayList<Integer>();
-    
+
     for(int i = 0; i < 1000000; i++){
       linkedlist.add(i);
       arraylist.add(i);
       //adding all the numbers to the lists
     }
 
-    
     //*******LinkedLists*******
     long starttime = System.nanoTime();
     /*
@@ -41,7 +40,6 @@ public class Main {
     */
     System.out.println("NanoSeconds:LinkedLists: " + elapsedtime);
 
-    
     //*******ArrayLists*******
     starttime = System.nanoTime();
     /*
@@ -57,11 +55,10 @@ public class Main {
     */
     arraylist.add(500000, 500000);
 
-    
     endtime = System.nanoTime();
 
     elapsedtime = endtime - starttime;
 
-    System.out.println("NanoSeconds:ArrayLists: " + elapsedtime);    
+    System.out.println("NanoSeconds:ArrayLists: " + elapsedtime);
   }
 }
