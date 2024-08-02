@@ -6,22 +6,24 @@ public class Main {
         average case: O(log(log(n)))
         worst case: O(n) [values increase exponentially]
          */
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] array = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2056};
 
-        int index = interpolationSearch(array, 5);
+        int index = interpolationSearch(array, 256);
 
         if(index == -1) System.out.println("The value was not found");
 
         else System.out.println("The probe was found at index: " + index);
     }
-    private static int interpolationSearch(int[] array, int value){
+
+
+        private static int interpolationSearch(int[] array, int value){
 
         int high = array.length - 1; //high = lenght of array starting from index 0
         int low = 0;
 
         while(value >= array[low]  && value <= array[high] && low <= high){
 
-            int probe = (high - low) * (value - array[low]) / (array[high] - array[low]); //formula that is very accurate on finding index
+            int probe = low + (high - low) * (value - array[low]) / (array[high] - array[low]); //formula that is very accurate on finding index
 
             System.out.println("probe:" + probe);
 
