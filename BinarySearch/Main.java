@@ -1,3 +1,5 @@
+
+
 public class Main{
 
 	/*
@@ -14,7 +16,7 @@ Half of the array is eliminated during each "step"
 			array[i] = i;
 		}
 
-		//int index = Arrays.binarySearch(array, target);
+		//int index = Arrays.binarySearch(array, target); this is the binarysearch function
 		int index = binarySearch(array, target);
 
 		if(index == -1) {
