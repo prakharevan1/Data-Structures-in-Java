@@ -10,4 +10,4 @@ just search up GeeksForGeeks, they should come up, they have examples in a lot o
 
 link here: 
 
-[geeksforgeeks]([url](https://www.geeksforgeeks.org))
+https://www.geeksforgeeks.org
