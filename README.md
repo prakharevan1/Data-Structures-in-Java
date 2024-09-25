@@ -4,10 +4,10 @@ It is currently my third month of Java, and I am trying to learn data structures
 
 So, I decided to try to learn how to code data structures in java, which is easy since java is a very object oriented language (its the main reason why there is a lot of boilerplate code).
 
-Shoutout to Bro Codez for teaching me how to make all these types of data structures:
+Shoutout to geeksForGeeks for teaching me all this stuff
 
-Bro Codez youtube channel:
+just search up GeeksForGeeks, they should come up, they have examples in a lot of languages:
 
-(He makes videos on PHP, Java, C++, C#, CSS, HTML, and Python so I would highly encourage you check him out):
+link here: 
 
-https://www.youtube.com/@BroCodez
+[geeksforgeeks]([url](https://www.geeksforgeeks.org))
