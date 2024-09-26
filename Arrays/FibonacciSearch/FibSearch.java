@@ -18,61 +18,28 @@ class FibSearch {
         int fibM
                 = fibMMm2 + fibMMm1; // m'th Fibonacci number
 
-        /* fibM is going to store the smallest Fibonacci
-        Number greater than or equal to n */
         while (fibM < n) {
-            System.out.println("Fib2 = " + fibMMm2 + "; Fib 1 = " + fibMMm1 + "; fibM = " + fibM);
             fibMMm2 = fibMMm1;
             fibMMm1 = fibM;
-            fibM = fibMMm2 + fibMMm1;
-            System.out.println("Fib2 = " + fibMMm2 + "; Fib 1 = " + fibMMm1 + "; fibM = " + fibM);
+            fibM = fibMMm1 + fibMMm2;
         }
-
-        // Marks the eliminated range from the front
         int offset = -1;
-
-        /* While there are elements to be inspected.
-        Note that we compare arr[fibMm2] with x.
-        When fibM becomes 1, fibMm2 becomes 0 */
         while (fibM > 1) {
-            // Check if fibMm2 is a valid location
-            int i = minimum(offset + fibMMm2, n - 1);
-            System.out.println("Minimum = " + i);
-            System.out.println("Offset: " + offset);
-
-            /* If x is greater than the value at index
-            fibMm2,
-            cut the subarray array from offset to i */
+            int i = minimum(fibMMm2 + offset, n - 1);
             if (arr[i] < x) {
                 fibM = fibMMm1;
                 fibMMm1 = fibMMm2;
                 fibMMm2 = fibM - fibMMm1;
                 offset = i;
-                System.out.println("Fib2 = " + fibMMm2 + "; Fib 1 = " + fibMMm1 + "; fibM = " + fibM);
-                System.out.println("Offset = " + i);
-            }
-
-            /* If x is less than the value at index fibMm2,
-            cut the subarray after i+1 */
-            else if (arr[i] > x) {
+            } else if (x < arr[i]) {
                 fibM = fibMMm2;
                 fibMMm1 = fibMMm1 - fibMMm2;
                 fibMMm2 = fibM - fibMMm1;
-                System.out.println("Fib2 = " + fibMMm2 + "; Fib 1 = " + fibMMm1 + "; fibM = " + fibM);
-                System.out.println("Offset = " + i);
-            }
-
-            /* Element found. Return index */
-            else
-                return i;
+            } else return i; //index found
         }
+        if (fibM == 1 && arr[n - 1] == x) return n - 1;
 
-        /* Comparing the last element with x */
-        if (fibMMm1 == 1 && arr[n - 1] == x)
-            return n - 1;
-
-        /* Element not found. Return -1 */
-        return -1;
+        return -1; //index not found
     }
 
     // Driver code
@@ -82,14 +49,16 @@ class FibSearch {
                 80, 82, 85, 90, 100, 235 };
         int n = 12;
         int x = 235;
+        double currentTime = System.nanoTime();
         int index = fibonacciSearch(arr, x, n);
-        if (index >= 0)
-            System.out.print("Element found at index: "
-                    + index);
-        else
+        double presentTime = System.nanoTime();
+        if (index >= 0) {
+            System.out.print("Element found at index: " + index + "\n");
+            System.out.println("Time taken(ns): " + (presentTime - currentTime));
+        } else {
             System.out.print(
                     x + " isn't present in the array");
+            System.out.println("Time taken(ns): " + (presentTime - currentTime));
+        }
     }
 }
-
-// This code is contributed by sourabh_jain.
