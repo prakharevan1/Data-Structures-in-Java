@@ -17,6 +17,14 @@ public class BubbleSort {
             }
             if (!swapped) break;
         }
+        /*
+        * How it works:
+        * It is sort of like SelectionSort, but if it
+        * is not swapped, it breaks out of the array.
+        * This causes it to be more stable, but
+        * it has a slower runtime, however it is still
+        * O(n^2) as we drop constants
+        */
     }
     public static void printArr(int[] arr) {
         for(int key: arr) {

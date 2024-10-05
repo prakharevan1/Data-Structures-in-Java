@@ -16,6 +16,11 @@ public class SelectionSort {
                 arr[min_index] = temp;
             }
         }
+        /*
+        * How it works:
+        * it looks through an array, and if one element is greater than the other,
+        * it swaps the two elements. Pretty simple :D
+        */
     }
     public static void printArr(int[] arr) {
         for (int key: arr) {
