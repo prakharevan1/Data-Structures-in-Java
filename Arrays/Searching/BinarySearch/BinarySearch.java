@@ -12,6 +12,12 @@ public class BinarySearch {
         } else if (arr[mid] == num) return mid;
 
         return -1;
+        /*
+        * How it works:
+        * it looks through a (SORTED) array, and if the element
+        * it is looking for is greater/less than the middle, it looks through
+        * the top/bottom half. O(log(n)) runtime
+        */
     }
     public static void main(String[] args) {
         int[] arr = {1, 3, 4, 5, 6, 7, 8, 9, 15, 17, 22, 35, 36, 39, 42, 45, 53};
