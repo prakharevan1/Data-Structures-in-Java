@@ -1,7 +1,5 @@
 package DataStructures.Arrays.Sorting.HeapSort;
 
-
-
 public class MaxHeap {
     private int[] Heap;
     private int size;
@@ -37,26 +35,26 @@ public class MaxHeap {
     private void maxHeapify(int pos) {
         if (isLeaf(pos)) return;
 
-        if (Heap[pos] < Heap[leftChild(pos)] ||
+        if (Heap[pos] < Heap[leftChild(pos)] || //if the pos is less than left and right children
             Heap[pos] < Heap[rightChild(pos)])
             {
                 if (Heap[leftChild(pos)] > Heap[rightChild(pos)]) {
-                    swap(pos, leftChild(pos));
-                    maxHeapify(leftChild(pos));
+                    swap(pos, leftChild(pos)); //swap pos and left child, rearrange tree
+                    maxHeapify(leftChild(pos)); //goes down tree until it reaches leaf
                 } else {
-                    swap(pos, rightChild(pos));
-                    maxHeapify(rightChild(pos));
+                    swap(pos, rightChild(pos)); //swaps pos and rightchild if leftchild is not at wrong place
+                    maxHeapify(rightChild(pos)); //runs through right child until it reaches leaf
                 }
             }
     }
     public void insert(int element) {
-        Heap[size] = element;
+        Heap[size] = element; //makes lowest element the size
 
         int current = size;
 
         while (Heap[current] > Heap[parent(current)]) { //should be organized from greatest to least
             swap(current, parent(current)); //swap function
-            current = parent(current); //x2 swap
+            current = parent(current); //parent(current) = current since they are swapped
         }
         size++; //increase size of tree
     }
@@ -82,13 +80,11 @@ public class MaxHeap {
             System.out.println(); // for new line
         }
     }
- 
-    // Method 9
     // Remove an element from max heap
     public int extractMax() {
         int popped = Heap[0];
         Heap[0] = Heap[--size];
-        maxHeapify(0);
+        maxHeapify(0); //removes Max element
         return popped;
     }
     public static void main(String[] args) {
@@ -96,23 +92,18 @@ public class MaxHeap {
         System.out.println("The Max Heap is ");
  
         MaxHeap maxHeap = new MaxHeap(15);
- 
-        // Inserting nodes
-        // Custom inputs
-        maxHeap.insert(5);
+        
+        maxHeap.insert(55);
+        maxHeap.insert(23);
+        maxHeap.insert(32);
+        maxHeap.insert(69);
+        maxHeap.insert(39);
         maxHeap.insert(3);
-        maxHeap.insert(17);
-        maxHeap.insert(10);
-        maxHeap.insert(84);
-        maxHeap.insert(19);
-        maxHeap.insert(6);
-        maxHeap.insert(22);
-        maxHeap.insert(9);
- 
-        // Calling maxHeap() as defined above
+        maxHeap.insert(5);
+
+        long prevTime = System.nanoTime();
         maxHeap.print();
- 
-        // Print and display the maximum value in heap
-        System.out.println("The max val is " + maxHeap.extractMax());
+        long currentTime = System.nanoTime();
+        System.out.println("Time taken(ns): " + (currentTime - prevTime));
     }
 }
