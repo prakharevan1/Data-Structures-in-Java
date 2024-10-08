@@ -17,7 +17,7 @@ public class InsertionSort {
         * How this works:
         * It takes an array, and if one of the elements is greater, it saves the lower element and makes the
         * element above it equal to the element below it
-        *
+        * O(n) time complexity
         */
     }
     public static void printArr(int[] arr) {
